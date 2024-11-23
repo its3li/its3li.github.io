@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main Text -->
+    <text x="10" y="35" font-family="Arial" font-weight="700" font-size="40" fill="currentColor" class="logo-text">
+        Ali
+    </text>
+    <!-- Decorative Dot -->
+    <circle cx="85" cy="15" r="8" fill="#2563eb" class="logo-dot">
+        <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Decorative Lines -->
+    <path d="M0 45 L120 45" stroke="#2563eb" stroke-width="2" stroke-dasharray="2 4"/>
+</svg>
