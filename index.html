@@ -1,170 +1,200 @@
-<!-- MADE BY ALI-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali's Portfolio</title>
+    <title>Ali's Portfolio | Front-End Web Developer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#2563eb">
     <link href="styles.css" rel="stylesheet">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add Three.js and GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="dark-mode loading">
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Ali<span class="accent">.</span></div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <nav class="navbar">
-      <div class="container mx-auto flex justify-between items-center py-4">
-        <a href="#">
-          <span class="text-blue-500 text-3xl font-bold pl-4">its3li</span>
-        </a>
-        <ul class="flex space-x-6 pr-4">
-          <li>
-            <a href="#about" class="hover:text-blue-500">About</a>
-          </li>
-          <li>
-            <a href="#skills" class="hover:text-blue-500">Skills</a>
-          </li>
-          <li>
-            <a href="#projects" class="hover:text-blue-500">Projects</a>
-          </li>
-          <li>
-            <a href="#contact" class="hover:text-blue-500">Contact</a>
-          </li>
-        </ul>
-      </div>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="Ali's Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
-    <header class="hero relative overflow-hidden">
-      <div class="container mx-auto text-center py-20 relative">
-        <h1 class="text-5xl font-bold mb-4">Hello, I'm Ali</h1>
-        <a href="#contact" class="btn mt-4">Contact Me</a>
-        <div class="about-box">
-          <h2 class="text-4xl font-medium mt-12 mb-4">About Me</h2>
-          <p class="font-medium">I'm a young programmer passionate about coding and always eager to learn new technologies. I have experience in various programming languages and enjoy working on different projects.</p>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-text="Hello, I'm Ali">Hello, I'm <span class="highlight">Ali</span></h1>
+                <p class="subtitle">Front-End Web Developer</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="button">View My Work</a>
+                    <a href="#contact" class="button outline">Get In Touch</a>
+                </div>
+            </div>
         </div>
-        <div class="absolute bottom-0 left-0 mb-[-50px] ml-4">
-          <div class="relative rotate-90 origin-bottom-left border-4 border-white shadow-lg animate-float">
-            <img src="Me.jpg" alt="Ali's Image" class="h-32 w-32 object-cover">
-          </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Front-End Developer specializing in creating modern and responsive web applications. With expertise in React, Vite, and Tailwind CSS, I focus on delivering clean, efficient, and user-friendly interfaces.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Core Skills</h3>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>React.js</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Frameworks & Libraries</h3>
+                            <ul>
+                             
+                                <li>Vite</li>
+                                <li>Tailwind CSS</li>
+                                <li>CSS Modules</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Others</h3>
+                            <ul>
+                                <li>Git & GitHub</li>
+                                <li>VS Code</li>
+                                <li>Web Performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </header>
-    <main class="container mx-auto px-4 py-8">
-      <section id="skills" class="mb-12">
-        <h2 class="text-4xl font-bold mb-4">Skills</h2>
-        <div class="skills-grid">
-          <div class="skill">
-            <h3>JavaScript</h3>
-            <div class="progress-bar">
-              <div class="progress" style="width: 70%;"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Modern E-commerce UI</h3>
+                        <p>A sleek and responsive e-commerce interface built with Tailwind CSS, featuring a dynamic product catalog and smooth animations.</p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>Tailwind CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Portfolio Template</h3>
+                        <p>A customizable portfolio website template with dark mode support and smooth scrolling animations.</p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>An interactive weather dashboard with real-time updates, featuring dynamic UI components and weather visualizations.</p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>Tailwind CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Task Management UI</h3>
+                        <p>A clean and intuitive task management interface with drag-and-drop functionality and local storage persistence.</p>
+                        <div class="tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-          </div>
-          <div class="skill">
-            <h3>HTML</h3>
-            <div class="progress-bar">
-              <div class="progress" style="width: 80%;"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>CSS</h3>
-            <div class="progress-bar">
-              <div class="progress" style="width: 75%;"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>Python</h3>
-            <div class="progress-bar">
-              <div class="progress" style="width: 85%;"></div>
-            </div>
-          </div>
-          <div class="skill">
-            <h3>Java</h3>
-            <div class="progress-bar">
-              <div class="progress" style="width: 30%;"></div>
-            </div>
-          </div>
         </div>
-      </section>
-      <section id="projects" class="mb-12">
-        <h2 class="text-4xl font-bold mb-4">Projects I Have Made :</h2>
-        <div class="projects-grid">
-          <div class="project">
-            <h3>Azkar Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Discord Account Generator</h3>
-          </div>
-          <div class="project">
-            <h3>Website Login Using Discord Authorize</h3>
-          </div>
-          <div class="project">
-            <h3>Discord Nitro Proof Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Discord PayPal Proof Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Discord FeedBacks Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Latrex Store Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Login Using Email and Password Fully Functional</h3>
-          </div>
-          <div class="project">
-            <h3>Tokens Manager</h3>
-          </div>
-          <div class="project">
-            <h3>Music Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Probot Tax Website</h3>
-          </div>
-          <div class="project">
-            <h3>Remove Messages Python</h3>
-          </div>
-          <div class="project">
-            <h3>Nix Self Bot</h3>
-          </div>
-          <div class="project">
-            <h3>Shadow Generator</h3>
-          </div>
-          <div class="project">
-            <h3>Spark Website</h3>
-          </div>
-          <div class="project">
-            <h3>Speed Test Website</h3>
-          </div>
-          <div class="project">
-            <h3>Website Discord Bot</h3>
-          </div>
-          <div class="project">
-            <h3>ET Cards Generator</h3>
-          </div>
-          <div class="project">
-            <h3>Peter Portfolio</h3>
-          </div>
-          <div class="project">
-            <h3>Tolba Story</h3>
-          </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </section>
-      <section id="contact" class="mb-12">
-        <h2 class="text-4xl font-bold mb-4">Contact</h2>
-        <ul class="contact-list">
-          <li>
-            <a href="https://www.instagram.com/its3lii_" class="text-blue-500 hover:underline">Instagram</a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/profile.php?id=100038624296879" class="text-blue-500 hover:underline">Facebook</a>
-          </li>
-          <li>Discord: 8_79</li>
-          <li>
-            <a href="https://github.com/its3li" class="text-blue-500 hover:underline">GitHub</a>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer class="text-center py-4">
-      <p>&copy; 2024 Ali. All rights reserved.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ali. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="scripts.js"></script>
-  </body>
+</body>
 </html>
-<!-- MADE BY ALI-->
